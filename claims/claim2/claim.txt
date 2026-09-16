@@ -1,0 +1,9 @@
+Claim 2 — Offline evaluation pipeline
+
+The provided analysis scripts consume MIDE replay-record JSONL and generate the
+prevalence, conversion/replay, endpoint-taxonomy, and response-validation outputs
+used to support the paper's evaluation methodology.
+
+The synthetic fixture demonstrates that these analysis paths are executable across
+HTML and JSON responses, including PHP-style and repeated-key JSON-array candidates;
+it is not the raw data used for the paper's aggregate measurements.

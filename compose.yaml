@@ -1,0 +1,14 @@
+services:
+  artifact:
+    build:
+      context: ./artifact/mide
+    image: mide-artifact:local
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    user: "${UID:-1000}:${GID:-1000}"
+    environment:
+      MIDE_PYTHON: python
+      MPLCONFIGDIR: /tmp/matplotlib
+    entrypoint: ["/bin/bash", "-lc"]
+    command: ./run-demo.sh

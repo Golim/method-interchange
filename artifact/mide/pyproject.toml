@@ -1,0 +1,27 @@
+[project]
+name = "method-interchangeability"
+version = "1.0.0"
+description = "HTTP method interchangeability detection tool"
+requires-python = ">=3.11"
+dependencies = [
+    "playwright>=1.40.0",
+    "requests>=2.31.0",
+    "pyyaml>=6.0",
+    "rich>=13.0",
+    "beautifulsoup4>=4.12.0",
+    "browser-use>=0.1.0",
+    "playwright-stealth>=1.0.0",
+    "matplotlib>=3.8.0",
+    "tabulate>=0.9.0",
+]
+
+[dependency-groups]
+dev = [
+    "graphviz>=0.21",
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+    "requests-mock>=1.11",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"

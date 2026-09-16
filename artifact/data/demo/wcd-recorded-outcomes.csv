@@ -1,0 +1,7 @@
+record_index,domain,wcd_recorded_outcome,description
+1,demo-1.invalid,cacheable,Synthetic recorded cache-hit example; no live request is made.
+4,demo-1.invalid,cacheable,Synthetic recorded cache-hit example; no live request is made.
+7,demo-2.invalid,cacheable,Synthetic recorded cache-hit example; no live request is made.
+2,demo-1.invalid,non_cacheable,Synthetic recorded no-cache-hit example; no live request is made.
+5,demo-1.invalid,non_cacheable,Synthetic recorded no-cache-hit example; no live request is made.
+8,demo-2.invalid,non_cacheable,Synthetic recorded no-cache-hit example; no live request is made.

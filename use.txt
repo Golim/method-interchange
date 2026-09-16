@@ -1,0 +1,16 @@
+INTENDED USE
+
+MIDE is intended for authorized research on HTTP method interchangeability. The
+bundled synthetic fixture and all claim scripts are safe and offline.
+
+LIMITATIONS AND SAFETY
+
+Live crawling, replay, CSRF token checks, and WCD checks can contact remote systems
+and may trigger server-side behavior. Run them only with explicit authorization from
+the system owner. Conservative default filters and rate limits do not replace that
+authorization. Results from live targets are time-dependent.
+
+The archive does not include the raw Internet-scale measurement corpus because it
+may contain target-specific or sensitive request/response material. It therefore
+demonstrates the software workflow but cannot regenerate the paper's exact aggregate
+counts without a separately reviewed sanitized data release.

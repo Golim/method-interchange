@@ -1,0 +1,7 @@
+Claim 3 — Safety-gated security follow-up checks
+
+The CSRF token-replay and Web Cache Deception (WCD) tools select high-confidence
+interchangeable records and produce a request plan or WCD payload plan. Live network
+requests are explicitly opt-in. The fixture also includes recorded synthetic CSRF
+examples where POST rejects invalid tokens but GET accepts them, and recorded
+cacheable/non-cacheable WCD examples. This claim exercises only offline paths.

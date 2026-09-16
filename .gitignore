@@ -1,3 +1,5 @@
+artmeta/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -57,6 +59,14 @@ cover/
 
 # Django stuff:
 *.log
+
+# Generated output from the offline artifact demonstration.
+results/
+
+# The MIDE implementation is source code, not a build output.  Keep this
+# exception after the broad ``lib/`` rule above so artifact archives include it.
+!artifact/mide/lib/
+!artifact/mide/lib/**
 local_settings.py
 db.sqlite3
 db.sqlite3-journal

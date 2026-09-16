@@ -1,0 +1,4 @@
+domain,source_file,line_index,post_token_evidence,get_token_evidence,method_gap_evidence,behavior
+demo-1.invalid,demo.example-replay-records.jsonl,1,POST rejects missing token and changed token,GET accepts missing token and changed token,GET bypasses POST rejection for missing token and changed token,GET token validation gap
+demo-1.invalid,demo.example-replay-records.jsonl,2,no POST token enforcement observed,GET accepts missing token and changed token,no pairwise GET-over-POST token gap observed,GET accepts invalid token; POST enforcement not shown
+demo-2.invalid,demo.example-replay-records.jsonl,4,POST rejects missing token and changed token,GET rejects missing token and changed token,no pairwise GET-over-POST token gap observed,GET accepts original token only

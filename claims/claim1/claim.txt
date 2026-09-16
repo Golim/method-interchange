@@ -1,0 +1,11 @@
+Claim 1 — Baseline-controlled detection
+
+MIDE's offline analysis distinguishes strong HTTP method interchangeability from
+generic endpoint responses by comparing a converted GET both with the captured POST
+and with a no-query GET control. The supplied fixture exercises all four classes:
+10 A (strong interchangeability), 8 B (ambiguous), 6 C (baseline collision), and
+6 D (not interchangeable) records across form-urlencoded, JSON, and multipart
+bodies.
+
+This is an executable workflow demonstration, not a reproduction of the paper's
+Internet-scale prevalence counts.
