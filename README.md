@@ -38,6 +38,18 @@ Run an individual claim with, for example,
 docker compose run --rm artifact ./claims/claim1/run.sh
 ```
 
+The crawl/replay claim uses a bundled Flask target on the Compose network:
+
+```bash
+docker compose run --rm artifact ./claims/claim4/run.sh
+docker compose down
+```
+
+It crawls the target at `http://mide-fixture`, captures form submissions, replays
+converted GET requests, and analyzes the responses. The target is also published
+on `http://127.0.0.1:5080` for inspection while Compose is running. `docker compose
+down` stops the fixture after the claim completes.
+
 ## Google Colab
 
 The safe offline demonstrations can also run on a standard Google Colab CPU
@@ -51,6 +63,13 @@ runtime; no GPU is needed. Open a new notebook and run these cells:
 !./claims/claim1/run.sh
 !./claims/claim2/run.sh
 !./claims/claim3/run.sh
+```
+
+The browser-based claim requires Docker Compose and should be run on a local Docker host:
+
+```bash
+docker compose run --rm artifact ./claims/claim4/run.sh
+docker compose down
 ```
 
 Colab runtimes are temporary, so download or copy the generated `results/`

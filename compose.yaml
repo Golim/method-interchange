@@ -1,4 +1,15 @@
 services:
+  mide-fixture:
+    build:
+      context: ./artifact/data/mide-fixture
+    image: mide-fixture:local
+    ports:
+      - "127.0.0.1:5080:80"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1/').read()"]
+      interval: 2s
+      timeout: 2s
+      retries: 15
   artifact:
     build:
       context: ./artifact/mide
@@ -10,5 +21,8 @@ services:
     environment:
       MIDE_PYTHON: python
       MPLCONFIGDIR: /tmp/matplotlib
+    depends_on:
+      mide-fixture:
+        condition: service_healthy
     entrypoint: ["/bin/bash", "-lc"]
     command: ./run-demo.sh

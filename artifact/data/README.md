@@ -18,6 +18,11 @@ two CSV files are recorded fixtures, not live network experiments.
 
 `demo/generate_fixture.py` deterministically regenerates the replay JSONL fixture.
 
+`mide-fixture/` contains a deterministic Flask site built by Docker Compose for
+`claims/claim4/`. Unlike the JSONL fixture, it exercises the browser crawler,
+POST capture, body conversion, GET replay, and response analysis against a live
+local service.
+
 The raw data from the Tranco measurement is intentionally not included in this
 repository: it contains live target URLs and captured request/response material that
 may change over time or contain sensitive values.

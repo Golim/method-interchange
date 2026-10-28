@@ -1,0 +1,15 @@
+Claim 4 — End-to-end crawl and method-interchangeability workflow
+
+MIDE's browser crawler discovers linked pages, fills and submits POST forms, and
+records the resulting requests and responses. The post2get command converts and
+replays supported requests as GET candidates, and analyze classifies route
+acceptance and response equivalence.
+
+The Compose-only Flask target is deterministic and local. It covers URL-encoded,
+multipart, and JSON bodies, with GET endpoints that match POST responses, reject
+GET, or accept GET with a different application-level `result`. A
+parameter-dependent endpoint also checks that converted data reaches an otherwise
+valid GET route.
+
+This claim exercises MIDE's pipeline against a controlled target; it does not
+reproduce Internet-scale measurements from the paper.

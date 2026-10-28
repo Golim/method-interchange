@@ -1,0 +1,15 @@
+crawling:
+  max_pages: 20
+  max_depth: 4
+  page_load_timeout: 6000
+  sleep_between_pages: 0
+  max_forms: 5
+  form_action_timeout: 1500
+  form_interaction_timeout: 8000
+capture:
+  max_posts: 20
+output:
+  directory: results/claim4
+detection:
+  request_timeout: 5
+  rate_limit_delay: 0

@@ -7,6 +7,7 @@
 | `artifact/mide/` | MIDE source code, pinned `uv.lock`, configuration, and Dockerfile |
 | `artifact/analysis/` | Offline analysis and opt-in security follow-up scripts |
 | `artifact/data/demo/` | Small synthetic replay-record fixture; no real-site data |
+| `artifact/data/mide-fixture/` | Local Flask target for crawling and POST-to-GET replay |
 | `claims/` | One runnable guide per major artifact claim |
 | `install.sh` | Installs the pinned Python environment and Chromium |
 | `run-demo.sh` | Runs a safe end-to-end offline demonstration |
@@ -37,7 +38,8 @@ paper's methods. They do not regenerate the paper's Tranco counts.
 | `claims/claim1/run.sh` | Sections 5--6; baseline-control method and Table `baseline-classes` | The comparator separates classes A/B/C/D and handles form, JSON, and multipart inputs. |
 | `claims/claim2/run.sh` | Sections 5--6 and Appendix; conversion/replay analysis, endpoint taxonomy, and validation workflow | The analysis scripts produce non-empty summaries and a stratified validation sample. |
 | `claims/claim3/run.sh` | Section 7; CSRF token-replay and WCD follow-up methodology | Offline plans and recorded synthetic outcomes are generated, while the WCD dry run performs no live requests. |
-| `artifact/mide/main.py` | Sections 5 and 6; browser crawl, POST capture, conversion, replay, and batch execution | The live workflow is available for authorized targets; it is not required for the safe offline badge evaluation. |
+| `claims/claim4/run.sh` | Sections 5--6; browser crawl, POST capture, conversion, replay, and analysis | The complete pipeline runs against a deterministic local Flask target and checks accepted, rejected, equivalent, and non-equivalent outcomes across three request body types. |
+| `artifact/mide/main.py` | Sections 5 and 6; browser crawl, POST capture, conversion, replay, and batch execution | The live workflow is available for authorized targets; claim 4 exercises it against a local fixture. |
 
 ## Data and reproducibility scope
 
@@ -58,7 +60,8 @@ sensitivity reasons above.
 
 ## Safety
 
-All bundled examples are offline. Crawling and live CSRF/WCD replays can interact
-with remote systems and must be used only with explicit authorization. The default
-MIDE configuration includes conservative crawl limits and filters, but those do not
-replace authorization.
+The standard synthetic-data examples are offline. Claim 4 runs a local Flask
+service in Docker Compose and does not contact a remote target. Crawling and live
+CSRF/WCD replays can interact with remote systems and must be used only with
+explicit authorization. The default MIDE configuration includes conservative
+crawl limits and filters, but those do not replace authorization.
